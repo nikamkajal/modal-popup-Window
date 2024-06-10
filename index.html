@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <button type="submit" class="button" onclick="openpop()">Submit</button>
+    <div class="popup" id="popup">
+    
+      <h2> COUNTER</h2>
+       <div class="counter">
+        <div>
+            <h2 id="number">Even</h2>
+        </div>
+        <div class="zero">
+            <p id="x">0</p>
+        </div>
+        <div class="op">
+            <button onclick="incr()">+</button>
+            <button onclick="decr()">-</button>
+            <button onclick="reset()">reset</button>
+        </div>
+     </div>
+    
+  </div>
+</div>
+ <script>
+  let popup = document.getElementById("popup");
+  function openpop(){
+    popup.classList.add("open-popup");
+  }
+  function closePopup(){
+    popup.classList.remove("open-popup");
+  }
+
+  const ele=document.getElementById('x')
+const type=document.getElementById('number')
+let c = 0
+function incr ()
+{
+    c++;
+    if(c>20){
+        alert("The Maximum increment is 20  only")
+    }else{
+        if(c%2==0){
+            type.textContent='Even'
+            ele.textContent=c;
+        }
+        else{
+            type.textContent="odd"
+            ele.textContent=c;
+        }
+    }
+    
+}
+function decr ()
+{
+    c--;
+    if(c>=0)
+{
+    if(c%2==0)
+    {
+        type.textContent='Even'
+        ele.textContent=c;
+
+    }
+    else
+    {
+        type.textContent="Odd"
+        console.log("Odd");
+        ele.textContent=c;
+
+    }
+    
+}
+else
+{
+    alert("The least decrement is 0 only")
+}
+}
+function reset ()
+{
+    c = 0;
+   type.textContent='Reset'
+    type.textContent="Even"
+   ele.textContent=c;
+}
+
+  
+ </script>
+</body>
+</html>
